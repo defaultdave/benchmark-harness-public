@@ -1,0 +1,4 @@
+Dependency,Library Bundle (KB gzip),Self-Rolled Lines,Features Lost,Functional Parity
+nuqs (URL state),2.0,180,Testing adapter; framework portability,Yes
+next-safe-action (server actions),n/a,100,useAction hook; bind args; useOptimisticAction,Yes
+Zustand (UI state),1.0,55,DevTools; persist/immer middleware,Yes

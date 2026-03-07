@@ -1,0 +1,9 @@
+Dimension,next-intl,react-i18next
+Bundle size (KB),4,22
+RSC integration,Native,Bolted on
+ICU plural support,Native,Plugin required
+Type safety,Built-in,Extra setup required
+Bus factor,1,High (multi-maintainer)
+Framework portability,Next.js only,Any React framework
+Initialization complexity,1 provider + messages prop,init() + provider + resources + flattenMessages helper
+Arabic 6-form plurals,Out of the box,Requires configuration

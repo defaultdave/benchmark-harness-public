@@ -1,0 +1,12 @@
+Library,Full Bundle (KB),Tree-shaken Login Form (KB)
+Zod (full),17.7,17.7
+@zod/mini,3.9,3.9
+Valibot,6.0,1.37
+next-intl (precompile),4.0,4.0
+next-intl (no precompile),13.0,13.0
+react-i18next,22.0,22.0
+Zustand,1.0,1.0
+nuqs,2.0,2.0
+Self-rolled URL state,0,0
+Self-rolled server actions,0,0
+Self-rolled store,0,0

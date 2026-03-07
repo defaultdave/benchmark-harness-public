@@ -1,0 +1,4 @@
+Implementation,CartStatus,MenuStatus,CheckoutStatus,Unrelated
+Zustand,Yes,No,No,No
+React Context,Yes,Yes,Yes,No
+Self-Rolled,Yes,No,No,No

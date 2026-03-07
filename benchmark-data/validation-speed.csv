@@ -1,0 +1,6 @@
+Test,Zod (ops/sec),Valibot (ops/sec),Winner,Margin
+Login (valid),6368803,4205756,Zod,1.51x
+Login (invalid),108023,3029926,Valibot,28.05x
+Search params (9 fields),1810641,1034242,Zod,1.75x
+Cart mutation (4 fields),3418912,2271206,Zod,1.51x
+Booking form (nested 10+ fields),1788936,1086867,Zod,1.65x

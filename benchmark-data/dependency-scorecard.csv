@@ -1,0 +1,9 @@
+Dependency,Role,System Reliability,Owner Reliability,Community Confidence,Swappable,Risk Level,Verdict
+TanStack Query,Client data,A,B+,A,Low,Low,KEEP
+Zustand,UI state,A,B,A,High,Very Low,KEEP
+shadcn/ui,Components,A,B+,A,High,Very Low,KEEP
+nuqs,URL state,A,C+,B+,Medium,Low,KEEP
+next-safe-action,Server actions,B+,C,C+,High,Low,KEEP
+Zod,Validation,B,C+,A-,Medium,Moderate,INVESTIGATE
+next-intl,i18n,A-,C,B+,Low,Highest,KEEP with risk plan
+Radix,UI primitives,C+,D+,B-,Medium,High,REPLACE

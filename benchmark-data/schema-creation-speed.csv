@@ -1,0 +1,3 @@
+Test,Zod (ops/sec),Valibot (ops/sec),Winner,Margin
+Simple schema,23104,319943,Valibot,13.85x
+Complex schema (nested + arrays),6446,121127,Valibot,18.79x
