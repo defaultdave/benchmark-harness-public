@@ -199,15 +199,15 @@ export default function Home() {
               {validationSpeed.map((row) => (
                 <tr key={row.test} className="hover:bg-gray-50">
                   <td className="border px-3 py-2">{row.test}</td>
-                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Zod" ? "font-bold text-purple-700" : ""}`}>
+                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Zod" ? "font-bold text-blue-700" : ""}`}>
                     {row.zodOps.toLocaleString()}
                   </td>
-                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Valibot" ? "font-bold text-green-700" : ""}`}>
+                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Valibot" ? "font-bold text-purple-700" : ""}`}>
                     {row.valibotOps.toLocaleString()}
                   </td>
                   <td className="border px-3 py-2 text-center">
                     <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                      row.winner === "Zod" ? "bg-purple-100 text-purple-800" : "bg-green-100 text-green-800"
+                      row.winner === "Zod" ? "bg-blue-100 text-blue-800" : "bg-purple-100 text-purple-800"
                     }`}>
                       {row.winner}
                     </span>
@@ -234,15 +234,15 @@ export default function Home() {
               {schemaCreationSpeed.map((row) => (
                 <tr key={row.test} className="hover:bg-gray-50">
                   <td className="border px-3 py-2">{row.test}</td>
-                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Zod" ? "font-bold text-purple-700" : ""}`}>
+                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Zod" ? "font-bold text-blue-700" : ""}`}>
                     {row.zodOps.toLocaleString()}
                   </td>
-                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Valibot" ? "font-bold text-green-700" : ""}`}>
+                  <td className={`border px-3 py-2 text-right font-mono ${row.winner === "Valibot" ? "font-bold text-purple-700" : ""}`}>
                     {row.valibotOps.toLocaleString()}
                   </td>
                   <td className="border px-3 py-2 text-center">
                     <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                      row.winner === "Zod" ? "bg-purple-100 text-purple-800" : "bg-green-100 text-green-800"
+                      row.winner === "Zod" ? "bg-blue-100 text-blue-800" : "bg-purple-100 text-purple-800"
                     }`}>
                       {row.winner}
                     </span>

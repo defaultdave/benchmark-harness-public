@@ -249,8 +249,8 @@ export default function ValidationPage() {
           }))}
           leftLabel="Zod"
           rightLabel="Valibot"
-          leftColor="#7c3aed"
-          rightColor="#16a34a"
+          leftColor="#3b82f6"
+          rightColor="#8b5cf6"
         />
 
         <ComparisonBarChart
@@ -264,8 +264,8 @@ export default function ValidationPage() {
           }))}
           leftLabel="Zod"
           rightLabel="Valibot"
-          leftColor="#7c3aed"
-          rightColor="#16a34a"
+          leftColor="#3b82f6"
+          rightColor="#8b5cf6"
         />
 
         <HorizontalBarChart
@@ -274,7 +274,7 @@ export default function ValidationPage() {
             ...validationBundles.map((b) => ({
               label: b.library,
               value: b.fullKB,
-              color: b.library.includes("Zod") || b.library.includes("zod") ? "#7c3aed" : "#16a34a",
+              color: b.library.includes("Zod") || b.library.includes("zod") ? "#3b82f6" : "#8b5cf6",
               annotation: b.treeShakenKB !== b.fullKB ? `(${b.treeShakenKB} KB tree-shaken)` : undefined,
             })),
           ]}
@@ -326,13 +326,13 @@ export default function ValidationPage() {
               {errorComparison && (
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-medium mb-2 text-purple-700">Zod Errors</h4>
+                    <h4 className="font-medium mb-2 text-blue-700">Zod Errors</h4>
                     <pre className="bg-gray-50 border rounded p-3 text-xs overflow-auto max-h-64">
                       {errorComparison.zodErrors}
                     </pre>
                   </div>
                   <div>
-                    <h4 className="font-medium mb-2 text-green-700">Valibot Errors</h4>
+                    <h4 className="font-medium mb-2 text-purple-700">Valibot Errors</h4>
                     <pre className="bg-gray-50 border rounded p-3 text-xs overflow-auto max-h-64">
                       {errorComparison.valibotErrors}
                     </pre>
@@ -363,16 +363,16 @@ function ResultTable({ results }: { results: BenchmarkResult[] }) {
         {results.map((r) => (
           <tr key={r.name}>
             <td className="border p-2">{r.name}</td>
-            <td className={`border p-2 text-right ${r.winner === "zod" ? "font-bold text-green-700" : ""}`}>
+            <td className={`border p-2 text-right ${r.winner === "zod" ? "font-bold text-blue-700" : ""}`}>
               {r.zodMs.toFixed(1)}
             </td>
-            <td className={`border p-2 text-right ${r.winner === "valibot" ? "font-bold text-green-700" : ""}`}>
+            <td className={`border p-2 text-right ${r.winner === "valibot" ? "font-bold text-purple-700" : ""}`}>
               {r.valibotMs.toFixed(1)}
             </td>
             <td className="border p-2 text-right font-mono text-sm">{r.ratio}</td>
             <td className="border p-2 text-center">
               <span className={`px-2 py-0.5 rounded text-xs font-medium ${
-                r.winner === "zod" ? "bg-purple-100 text-purple-800" : "bg-green-100 text-green-800"
+                r.winner === "zod" ? "bg-blue-100 text-blue-800" : "bg-purple-100 text-purple-800"
               }`}>
                 {r.winner}
               </span>

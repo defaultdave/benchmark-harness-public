@@ -21,7 +21,6 @@ const addToCartSchema = z.object({
 export const addToCartAction = authClient
   .schema(addToCartSchema)
   .action(async ({ parsedInput }) => {
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 100));
     return {
       cartId: "cart-456",

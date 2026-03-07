@@ -1,25 +1,47 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { addToCartAction, submitContactAction } from "./actions";
 import Link from "next/link";
+import { isStaticExport, mockAddToCart, mockSubmitContact } from "@/lib/mock-actions";
+
+// In static mode, server actions aren't available — use mocks instead
+let addToCartAction: (input: Record<string, unknown>) => Promise<unknown>;
+let submitContactAction: (input: Record<string, unknown>) => Promise<unknown>;
+
+if (isStaticExport) {
+  addToCartAction = mockAddToCart;
+  submitContactAction = mockSubmitContact;
+} else {
+  // Dynamic require for server actions — eliminated in static builds
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const actions = require("./actions");
+    addToCartAction = actions.addToCartAction;
+    submitContactAction = actions.submitContactAction;
+  } catch {
+    addToCartAction = mockAddToCart;
+    submitContactAction = mockSubmitContact;
+  }
+}
 
 export default function SelfRolledActionsPage() {
   const [results, setResults] = useState<string[]>([]);
   const [cartPending, startCartTransition] = useTransition();
   const [contactPending, startContactTransition] = useTransition();
 
+  const prefix = isStaticExport ? "[mock]" : "[self-rolled]";
+
   const handleAddToCart = (input: Record<string, unknown>) => {
     startCartTransition(async () => {
       const result = await addToCartAction(input);
-      setResults((prev) => [...prev, `[self-rolled] Cart result: ${JSON.stringify(result)}`]);
+      setResults((prev) => [...prev, `${prefix} Cart result: ${JSON.stringify(result)}`]);
     });
   };
 
   const handleContact = (input: Record<string, unknown>) => {
     startContactTransition(async () => {
       const result = await submitContactAction(input);
-      setResults((prev) => [...prev, `[self-rolled] Contact result: ${JSON.stringify(result)}`]);
+      setResults((prev) => [...prev, `${prefix} Contact result: ${JSON.stringify(result)}`]);
     });
   };
 
@@ -38,6 +60,12 @@ export default function SelfRolledActionsPage() {
         <strong>Features:</strong> createAction/createAuthAction, Zod validation, unified result type, auth middleware
         <br />
         <strong>Missing vs library:</strong> No useAction hook (using useTransition), no auto status tracking, no bind args
+        {isStaticExport && (
+          <>
+            <br />
+            <span className="text-orange-600 font-medium">Static mode — using client-side mock actions (same validation logic)</span>
+          </>
+        )}
       </div>
 
       <section className="space-y-3">

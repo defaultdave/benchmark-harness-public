@@ -14,7 +14,7 @@ export const validationSpeed: ValidationSpeed[] = [
   { test: "Login (invalid)", zodOps: 108023, valibotOps: 3029926, winner: "Valibot", margin: "28.05x" },
   { test: "Search params (9 fields)", zodOps: 1810641, valibotOps: 1034242, winner: "Zod", margin: "1.75x" },
   { test: "Cart mutation (4 fields)", zodOps: 3418912, valibotOps: 2271206, winner: "Zod", margin: "1.51x" },
-  { test: "Booking form (nested 10+)", zodOps: 1788936, valibotOps: 1086867, winner: "Zod", margin: "1.65x" },
+  { test: "Nested form (10+ fields)", zodOps: 1788936, valibotOps: 1086867, winner: "Zod", margin: "1.65x" },
 ];
 
 export interface SchemaCreationSpeed {
