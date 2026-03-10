@@ -8,7 +8,10 @@ const isStaticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true";
 
 const nextConfig: NextConfig = {
   reactStrictMode: false, // Disabled so useRef render counters in ui-state demos are accurate
-  ...(isStaticExport && { output: "export" }),
+  ...(isStaticExport && {
+    output: "export",
+    basePath: "/benchmark-harness-public",
+  }),
 };
 
 const analyzed = withBundleAnalyzer({

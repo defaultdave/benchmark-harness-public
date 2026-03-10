@@ -43,6 +43,7 @@ export function GroupedBarChart({ title, data, unit = "", maxValue, height }: Ba
               y += barHeight + barGap;
               return (
                 <g key={vi}>
+                  <rect x={labelWidth} y={currentY} width={barAreaWidth} height={barHeight} fill="#f1f5f9" rx={3} />
                   <rect
                     x={labelWidth}
                     y={currentY}
@@ -52,11 +53,12 @@ export function GroupedBarChart({ title, data, unit = "", maxValue, height }: Ba
                     rx={3}
                   />
                   <text
-                    x={labelWidth + barW + 6}
+                    x={barW > barAreaWidth * 0.75 ? labelWidth + barW - 6 : labelWidth + barW + 6}
                     y={currentY + barHeight / 2 + 1}
                     fontSize={11}
-                    fill="#374151"
+                    fill={barW > barAreaWidth * 0.75 ? "white" : "#374151"}
                     dominantBaseline="middle"
+                    textAnchor={barW > barAreaWidth * 0.75 ? "end" : "start"}
                   >
                     {formatNumber(val.value)}{unit ? ` ${unit}` : ""}
                   </text>
@@ -149,6 +151,7 @@ export function HorizontalBarChart({ title, bars, unit = "", maxValue }: Horizon
               >
                 {bar.label}
               </text>
+              <rect x={labelWidth} y={y} width={barAreaWidth} height={barHeight} fill="#f1f5f9" rx={3} />
               <rect
                 x={labelWidth}
                 y={y}
@@ -158,11 +161,12 @@ export function HorizontalBarChart({ title, bars, unit = "", maxValue }: Horizon
                 rx={3}
               />
               <text
-                x={labelWidth + barW + 6}
+                x={barW > barAreaWidth * 0.75 ? labelWidth + barW - 6 : labelWidth + barW + 6}
                 y={y + barHeight / 2}
                 fontSize={11}
-                fill="#374151"
+                fill={barW > barAreaWidth * 0.75 ? "white" : "#374151"}
                 dominantBaseline="middle"
+                textAnchor={barW > barAreaWidth * 0.75 ? "end" : "start"}
               >
                 {bar.value}{unit ? ` ${unit}` : ""}{bar.annotation ? ` ${bar.annotation}` : ""}
               </text>
@@ -209,7 +213,7 @@ export function ComparisonBarChart({
   const pairGap = 20;
   const labelWidth = 180;
   const chartWidth = 650;
-  const barAreaWidth = chartWidth - labelWidth - 20;
+  const barAreaWidth = chartWidth - labelWidth - 70;
   const totalHeight = items.length * (barHeight * 2 + 6 + pairGap) + 20;
 
   return (
@@ -251,13 +255,29 @@ export function ComparisonBarChart({
                 {item.label}
               </text>
               {/* Left bar */}
+              <rect x={labelWidth} y={groupY} width={barAreaWidth} height={barHeight} fill="#f1f5f9" rx={3} />
               <rect x={labelWidth} y={groupY} width={Math.max(leftW, 1)} height={barHeight} fill={leftColor} rx={3} />
-              <text x={labelWidth + leftW + 5} y={groupY + barHeight / 2} fontSize={10} fill="#374151" dominantBaseline="middle">
+              <text
+                x={leftW > barAreaWidth * 0.75 ? labelWidth + leftW - 5 : labelWidth + leftW + 5}
+                y={groupY + barHeight / 2}
+                fontSize={10}
+                fill={leftW > barAreaWidth * 0.75 ? "white" : "#374151"}
+                dominantBaseline="middle"
+                textAnchor={leftW > barAreaWidth * 0.75 ? "end" : "start"}
+              >
                 {formatNumber(item.leftValue)} {unit}
               </text>
               {/* Right bar */}
+              <rect x={labelWidth} y={groupY + barHeight + 4} width={barAreaWidth} height={barHeight} fill="#f1f5f9" rx={3} />
               <rect x={labelWidth} y={groupY + barHeight + 4} width={Math.max(rightW, 1)} height={barHeight} fill={rightColor} rx={3} />
-              <text x={labelWidth + rightW + 5} y={groupY + barHeight + 4 + barHeight / 2} fontSize={10} fill="#374151" dominantBaseline="middle">
+              <text
+                x={rightW > barAreaWidth * 0.75 ? labelWidth + rightW - 5 : labelWidth + rightW + 5}
+                y={groupY + barHeight + 4 + barHeight / 2}
+                fontSize={10}
+                fill={rightW > barAreaWidth * 0.75 ? "white" : "#374151"}
+                dominantBaseline="middle"
+                textAnchor={rightW > barAreaWidth * 0.75 ? "end" : "start"}
+              >
                 {formatNumber(item.rightValue)} {unit}
               </text>
               {/* Winner badge */}
