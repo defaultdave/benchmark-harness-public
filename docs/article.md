@@ -2,15 +2,15 @@
 
 ## My Takeaways (100% Human Written)
 
-<!-- TODO: Write your personal takeaways here. Some prompts to consider:
-- What surprised you about the results?
-- What did you learn about working with AI on technical analysis?
-- Where did Claude get it right vs. where did you have to push back?
-- What would you do differently next time?
-- How did the council review change your thinking?
--->
+This was a learning process in AI reliability for me, first off used my AI agents to do some research ahead of me to checkout. Mostly interested in what the current industry standard setup for Nextjs sites, and as a practice to write more design docs. As I read through the Architecture Overview (linked above), I questioned why these. So I had my AI dev team create a benchmark project, stepped through it to verify things were actually working. Then I thought, hey, an executive summary would be nice, or a linkedIn article.
 
-*[Your takeaways here]*
+What I found from this is something that most of us know, AI will just go with the flow, I had to prompt it to question the metrics it used, and other reviews of the data showed that it got some things wrong. Below is what it is. Just find the results fascinating. Below this is all 100% Claude generated, but with prompts to clarify, modify, some AI critical reviews.
+
+Feel free to checkout the git repo and dig through it yourself!
+
+Enjoy!
+
+- David Fleming (the human)
 
 ---
 
@@ -29,7 +29,7 @@ But I didn't just publish what it gave me. The draft went through a multi-step r
 
 What follows is Claude's analysis with those corrections applied. The thinking is Claude's. The verification is mine.
 
-For context, the original design doc that started this: [Architecture Overview](architecture-overview.md). That's where the dependency list came from.
+For context, the original design doc that started this: [Architecture Overview](/benchmark-harness-public/architecture). That's where the dependency list came from.
 
 ---
 
