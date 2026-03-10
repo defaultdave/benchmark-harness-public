@@ -12,9 +12,17 @@ export default function Home() {
   return (
     <main className="max-w-5xl mx-auto p-8">
       <h1 className="text-3xl font-bold mb-2">Dependency Benchmark Harness</h1>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-600 mb-4">
         Side-by-side comparison of every named frontend dependency vs. alternatives and self-rolled implementations.
       </p>
+      <div className="flex gap-4 mb-8 text-sm">
+        <a href="/docs/article.md" className="px-3 py-1.5 border rounded hover:border-blue-500 hover:text-blue-600 transition-colors">
+          Read the article: &ldquo;Show Me the Money&rdquo; →
+        </a>
+        <a href="/docs/architecture-overview.md" className="px-3 py-1.5 border rounded hover:border-blue-500 hover:text-blue-600 transition-colors">
+          Architecture Overview →
+        </a>
+      </div>
 
       {/* Dependency Scorecard */}
       <section className="mb-10">
@@ -69,7 +77,7 @@ export default function Home() {
         <div className="grid gap-4 md:grid-cols-3">
           <StatCard
             label="Self-Roll Savings"
-            value="335 lines"
+            value="349 lines"
             detail="Replaces 3 libraries (nuqs, next-safe-action, Zustand)"
           />
           <StatCard

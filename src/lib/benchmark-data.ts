@@ -99,9 +99,9 @@ export interface SelfRollComparison {
 }
 
 export const selfRollComparisons: SelfRollComparison[] = [
-  { dependency: "nuqs (URL state)", libraryBundleKB: 2.0, selfRolledLines: 180, featuresLost: "Testing adapter; framework portability", functionalParity: true },
-  { dependency: "next-safe-action", libraryBundleKB: null, selfRolledLines: 100, featuresLost: "useAction hook; bind args; useOptimisticAction", functionalParity: true },
-  { dependency: "Zustand (UI state)", libraryBundleKB: 1.0, selfRolledLines: 55, featuresLost: "DevTools; persist/immer middleware", functionalParity: true },
+  { dependency: "nuqs (URL state)", libraryBundleKB: 2.0, selfRolledLines: 201, featuresLost: "Testing adapter; framework portability", functionalParity: true },
+  { dependency: "next-safe-action", libraryBundleKB: null, selfRolledLines: 83, featuresLost: "useAction hook; bind args; useOptimisticAction", functionalParity: true },
+  { dependency: "Zustand (UI state)", libraryBundleKB: 1.0, selfRolledLines: 65, featuresLost: "DevTools; persist/immer middleware", functionalParity: true },
 ];
 
 export interface I18nComparison {
