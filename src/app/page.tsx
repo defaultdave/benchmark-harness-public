@@ -16,12 +16,12 @@ export default function Home() {
         Side-by-side comparison of every named frontend dependency vs. alternatives and self-rolled implementations.
       </p>
       <div className="flex gap-4 mb-8 text-sm">
-        <a href="/docs/article.md" className="px-3 py-1.5 border rounded hover:border-blue-500 hover:text-blue-600 transition-colors">
+        <Link href="/article" className="px-3 py-1.5 border rounded hover:border-blue-500 hover:text-blue-600 transition-colors">
           Read the article: &ldquo;Show Me the Money&rdquo; →
-        </a>
-        <a href="/docs/architecture-overview.md" className="px-3 py-1.5 border rounded hover:border-blue-500 hover:text-blue-600 transition-colors">
+        </Link>
+        <Link href="/architecture" className="px-3 py-1.5 border rounded hover:border-blue-500 hover:text-blue-600 transition-colors">
           Architecture Overview →
-        </a>
+        </Link>
       </div>
 
       {/* Dependency Scorecard */}
